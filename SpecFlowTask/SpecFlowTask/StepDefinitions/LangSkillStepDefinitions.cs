@@ -85,15 +85,15 @@ namespace SpecFlowTask.StepDefinitions
         [When(@"I edit '([^']*)' in the skills list")]
         public void WhenIEditInTheSkillsList(string level)
         {
-            //LanguageAndSkillsPage lanAndSkillPageObj = new LanguageAndSkillsPage();
-            //lanAndSkillPageObj.UpdateSkill(driver, level);
+            LanguageAndSkillsPage lanAndSkillPageObj = new LanguageAndSkillsPage();
+            lanAndSkillPageObj.UpdateSkill(driver, level);
         }
 
         [Then(@"'([^']*)' is updated successfully in skill list")]
         public void ThenIsUpdatedSuccessfullyInSkillList(string skill)
         {
-            //LanguageAndSkillsPage lanAndSkillPageObj = new LanguageAndSkillsPage();
-            //string NewSkill = lanAndSkillPageObj.GetEditedLanguage(driver);
+            LanguageAndSkillsPage lanAndSkillPageObj = new LanguageAndSkillsPage();
+            string NewSkill = lanAndSkillPageObj.GetEditedLanguage(driver);
         }
     }
 }
