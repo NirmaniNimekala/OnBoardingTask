@@ -199,8 +199,7 @@ testRunner.Then("The Skill should be added successfully", ((string)(null)), ((Te
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Edit existing Skill")]
-        [NUnit.Framework.TestCaseAttribute("Software Testing", null)]
-        [NUnit.Framework.TestCaseAttribute("Automation Testing", null)]
+        [NUnit.Framework.TestCaseAttribute("Software Automation", null)]
         public void EditExistingSkill(string skill, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;

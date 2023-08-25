@@ -38,5 +38,4 @@ Scenario Outline: Edit existing Skill
 
 Examples: 
 | Skill |
-| Software Testing |
-| Automation Testing | 
+| Software Automation |

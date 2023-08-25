@@ -72,7 +72,10 @@ namespace SpecFlowTask.Pages
         //Get the newly edited language code
         public string GetEditedLanguage(IWebDriver driver)
         {
-            IWebElement editedLanguage = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[last()]/tr/td/div/div[2]/select/option[4]"));
+            Thread.Sleep(5000);
+            //IWebElement editedLanguage = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[last()]/tr/td/div/div[2]/select/option[4]"));
+            IWebElement editedLanguage = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[1]"));
+            
             return editedLanguage.Text;
         }
 
@@ -116,15 +119,15 @@ namespace SpecFlowTask.Pages
             Thread.Sleep(5000);
         }
 
+        //Get newly added skills
         public string GetSkills(IWebDriver driver) { 
             //IWebElement newSkill = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody[last()]/tr/td[1]"));
             IWebElement newSkill = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody/tr/td[1]"));
             return newSkill.Text;
         }
 
-
         //Update a existing skill
-        public void UpdateSkill(IWebDriver driver, string level)
+        public void UpdateSkill(IWebDriver driver, string skill)
         {
             //Edit Skill
             IWebElement clickSkills = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
@@ -140,12 +143,12 @@ namespace SpecFlowTask.Pages
             Thread.Sleep(2000);
 
             //adding the dynamic value parameter
-            editSkillText.SendKeys(level);
+            editSkillText.SendKeys(skill);
 
             IWebElement editSkillLevel = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td/div/div[2]/select/option[3]"));
             editSkillLevel.Click();
 
-            IWebElement clickUpdateButton = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[2]/tr/td/div/span/input[1]"));
+            IWebElement clickUpdateButton = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[3]/div/div[2]/div/table/tbody[last()]/tr/td/div/span/input[1]"));
             clickUpdateButton.Click();
             Thread.Sleep(2000);
         }

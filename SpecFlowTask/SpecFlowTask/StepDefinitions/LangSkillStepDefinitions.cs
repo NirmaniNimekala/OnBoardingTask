@@ -64,7 +64,6 @@ namespace SpecFlowTask.StepDefinitions
             lanAndSkillPageObj.GetDeletedLanguage(driver);
         }
 
-
         //skills Add modify and delete
 
         [When(@"I add New Skill to the Skills")]
@@ -83,10 +82,10 @@ namespace SpecFlowTask.StepDefinitions
         }
 
         [When(@"I edit '([^']*)' in the skills list")]
-        public void WhenIEditInTheSkillsList(string level)
+        public void WhenIEditInTheSkillsList(string skill)
         {
             LanguageAndSkillsPage lanAndSkillPageObj = new LanguageAndSkillsPage();
-            lanAndSkillPageObj.UpdateSkill(driver, level);
+            lanAndSkillPageObj.UpdateSkill(driver, skill);
         }
 
         [Then(@"'([^']*)' is updated successfully in skill list")]
